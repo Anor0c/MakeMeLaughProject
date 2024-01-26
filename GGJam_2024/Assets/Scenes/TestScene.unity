@@ -436,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1447420289}
   - component: {fileID: 1447420288}
+  - component: {fileID: 1447420290}
   m_Layer: 0
   m_Name: Foule
   m_TagString: Untagged
@@ -510,6 +511,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1447420290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447420287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236215428c8ac8b48ab8df8fd69ccb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crowdSprite: {fileID: 0}
+  minCalmTimer: 3
+  maxCalmTimer: 5
+  minLookingTimer: 1.5
+  maxLookingTimer: 2.5
+  activeTimer: 0
+  isLooking: 0
 --- !u!1 &2124300863
 GameObject:
   m_ObjectHideFlags: 0
