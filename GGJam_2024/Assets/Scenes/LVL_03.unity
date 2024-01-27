@@ -622,6 +622,18 @@ PrefabInstance:
       propertyPath: laughBar
       value: 
       objectReference: {fileID: 2096452048}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: fartButton
+      value: 
+      objectReference: {fileID: 2096452053}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: imitateButton
+      value: 
+      objectReference: {fileID: 2096452050}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: funnyFaceButton
+      value: 
+      objectReference: {fileID: 2096452049}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1161,6 +1173,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428a2aa831b4cd04385b73fc357337d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2096452049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4511476266069176933, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+  m_PrefabInstance: {fileID: 2096452046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2096452050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7010210064833044656, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+  m_PrefabInstance: {fileID: 2096452046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2096452051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,6 +1217,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5615ee35331aaeb49845db2aa0182989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2096452053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3755069275398267821, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+  m_PrefabInstance: {fileID: 2096452046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2122187685

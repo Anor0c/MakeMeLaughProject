@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class JokeBehaviour : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class JokeBehaviour : MonoBehaviour
 
 
     [SerializeField] private UIBar laughBar;
+    [SerializeField] private Button fartButton, imitateButton, funnyFaceButton; 
 
 
     private void Start()
@@ -51,6 +53,7 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator FartRoutine()
     {
         isFarting = true;
+        fartButton.interactable = false; 
         yield return new WaitForSeconds(fartActiveTime);
         isFarting = false;
         fartCurrentCooldown = fartCooldown;
@@ -75,6 +78,7 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator ImitateRoutine()
     {
         isImitating = true;
+        imitateButton.interactable = false; 
         yield return new WaitForSeconds(funnyFaceActiveTime);
         isImitating = false; 
         imitateCurrentCooldown = imitateCooldown;
@@ -91,6 +95,7 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator FunnyFaceRoutine()
     {
         isFunnyFacing = true;
+        funnyFaceButton.interactable = false; 
         yield return new WaitForSeconds(funnyFaceActiveTime);
         isFunnyFacing = false; 
         funnyFaceCurrentCooldown = funnyFaceCooldown; 
@@ -122,7 +127,8 @@ public class JokeBehaviour : MonoBehaviour
         }
         else
         {
-            isFartCooldown = false; 
+            isFartCooldown = false;
+            fartButton.interactable = true; 
         }
         if (imitateCurrentCooldown > 0)
         {
@@ -131,7 +137,8 @@ public class JokeBehaviour : MonoBehaviour
         }
         else
         {
-            isImitationCooldown = false; 
+            isImitationCooldown = false;
+            imitateButton.interactable = true; 
         }
         if (funnyFaceCurrentCooldown > 0)
         {
@@ -140,12 +147,12 @@ public class JokeBehaviour : MonoBehaviour
         }
         else
         {
-            isFunnyFaceCooldown = false; 
+            isFunnyFaceCooldown = false;
+            funnyFaceButton.interactable = true; 
         }
         if (isFarting)
         {
             laughBar.UpdateValue(fartDamage);
-            Debug.Log(fartDamage);
         }
         if(isImitating)
         {
@@ -155,7 +162,7 @@ public class JokeBehaviour : MonoBehaviour
         {
             laughBar.UpdateValue(funnyFaceDamage); 
         }
-        if (fartHeld)
+        if (fartHeld&&!isFartCooldown)
         {
             fartDamage += Time.deltaTime/100; 
         }

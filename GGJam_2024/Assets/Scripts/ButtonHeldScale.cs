@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class ButtonHeldScale : MonoBehaviour
 {
     private RectTransform button;
+    private JokeBehaviour player; 
     private bool buttonHeld;
+    private bool hasBeenHeld;
     private float normalScale = 100f; 
     private float maxScale = 120f; 
 
     void Start()
     {
         button = GetComponent<RectTransform>();
+        player = FindObjectOfType<JokeBehaviour>(); 
     }
 
     public void Held()
@@ -26,7 +29,7 @@ public class ButtonHeldScale : MonoBehaviour
     }
     void Update()
     {
-        if (buttonHeld)
+        if (buttonHeld&&!player.IsFartCooldown)
         {
             button.sizeDelta += new Vector2(Time.deltaTime*10, Time.deltaTime*10); 
         }
