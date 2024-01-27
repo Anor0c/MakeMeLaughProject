@@ -12,6 +12,7 @@ public enum ButtonBinding
 public class ButtonAlphaCooldown : MonoBehaviour
 {
     private bool isCooldown;  
+    private bool isJoking;  
 
     private Image buttonImage;
     private JokeBehaviour player;
@@ -29,17 +30,20 @@ public class ButtonAlphaCooldown : MonoBehaviour
         {
             case ButtonBinding.Fart:
                 isCooldown = player.IsFartCooldown;
+                isJoking = player.IsFarting; 
                 break;
             case ButtonBinding.Imitation:
                 isCooldown = player.IsImitationCooldown;
+                isJoking = player.IsImitating; 
                 break;
             case ButtonBinding.FunnyFace:
                 isCooldown = player.IsFunnyFaceCooldown;
+                isJoking = player.IsFunnyFacing; 
                 break;
             default:
                 break;
         }
-        if (isCooldown)
+        if (isCooldown || isJoking) 
         {
             buttonImage.color = new Vector4(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0.1f);
         }

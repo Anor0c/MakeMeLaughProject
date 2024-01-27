@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3563905530301515334}
   - component: {fileID: 3435525399212752479}
   - component: {fileID: 7010210064833044656}
+  - component: {fileID: 8860489669047630084}
   m_Layer: 5
   m_Name: Button-Imitation
   m_TagString: Untagged
@@ -145,6 +146,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8860489669047630084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177339638820594609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9163c6a59429a5d4cbffb45a2afc349d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  binding: 1
 --- !u!1 &337630768182867804
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +707,7 @@ GameObject:
   - component: {fileID: 217697679282923644}
   - component: {fileID: 8803251560539869590}
   - component: {fileID: 4511476266069176933}
+  - component: {fileID: 1737052107343065488}
   m_Layer: 5
   m_Name: Button-Grimace
   m_TagString: Untagged
@@ -814,6 +829,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1737052107343065488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4012302326831276853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9163c6a59429a5d4cbffb45a2afc349d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  binding: 2
 --- !u!1 &4240550916643773497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1298,7 @@ GameObject:
   - component: {fileID: 8693482496796899731}
   - component: {fileID: 1122475657860278396}
   - component: {fileID: 3755069275398267821}
+  - component: {fileID: 7726228026849330893}
   m_Layer: 5
   m_Name: Button-Fart
   m_TagString: Untagged
@@ -1403,6 +1432,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7726228026849330893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025746112943864504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9163c6a59429a5d4cbffb45a2afc349d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  binding: 0
 --- !u!1 &8710418484445619614
 GameObject:
   m_ObjectHideFlags: 0
