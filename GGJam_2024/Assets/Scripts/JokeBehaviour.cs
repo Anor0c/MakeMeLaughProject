@@ -5,19 +5,29 @@ using UnityEngine;
 public class JokeBehaviour : MonoBehaviour
 {
     private float fartCurrentCooldown, imitateCurrentCooldown, funnyFaceCurrentCooldown;
+    private const float damageMultiplier = 0.01f; 
+    [SerializeField] private float fartDamage = 1f, imitateDamage = 2f, funnyFaceDamage = 0.5f;
     [Space]
     [SerializeField] private float fartCooldown, imitateCooldown, funnyFaceCooldown;
     [Space]
     [SerializeField] private float fartActiveTime, imitateActiveTime, funnyFaceActiveTime;  
     [Space]
     [SerializeField] private bool isFartCooldown, isImitationCooldown, isFunnyFaceCooldown;
-
     [Space]
     [SerializeField] private bool isFarting, isImitating, isFunnyFacing; 
 
     [SerializeField] public PlayerStates State { get => _state; }
+
+
+    [SerializeField] private UIBar laughBar; 
     private PlayerStates _state = PlayerStates.Innocent;
 
+    private void Start()
+    {
+        fartDamage *= damageMultiplier;
+        imitateDamage *= damageMultiplier;
+        funnyFaceDamage *= damageMultiplier;
+    }
     public void OnFart()
     {
         if (_state == PlayerStates.Joking)
@@ -114,6 +124,18 @@ public class JokeBehaviour : MonoBehaviour
         else
         {
             isFunnyFaceCooldown = false; 
+        }
+        if (isFarting)
+        {
+            laughBar.UpdateValue(fartDamage);
+        }
+        if(isImitating)
+        {
+            laughBar.UpdateValue(imitateDamage); 
+        }
+        if(isFunnyFacing)
+        {
+            laughBar.UpdateValue(funnyFaceDamage); 
         }
     }
 }
