@@ -16,7 +16,7 @@ public class JokeBehaviour : MonoBehaviour
     [Space]
     [SerializeField] private bool isFartCooldown, isImitationCooldown, isFunnyFaceCooldown;
     [Space]
-    [SerializeField] private bool isFarting, isImitating, isFunnyFacing;
+    [SerializeField] private bool isFarting, isImitating, isFunnyFacing, isJoking;
 
     public bool IsFartCooldown { get => isFartCooldown; }
     public bool IsImitationCooldown { get => isImitationCooldown; }
@@ -25,12 +25,11 @@ public class JokeBehaviour : MonoBehaviour
     public bool IsFarting { get => isFarting; }
     public bool IsImitating { get => isImitating; }
     public bool IsFunnyFacing { get => isFunnyFacing; }
+    public bool IsJoking { get => isJoking; }
 
 
     [SerializeField] private UIBar laughBar;
 
-     public PlayerStates State { get => _state; }
-    [SerializeField] private PlayerStates _state = PlayerStates.Innocent;
 
     private void Start()
     {
@@ -41,8 +40,7 @@ public class JokeBehaviour : MonoBehaviour
     }
     public void OnFart()
     {
-        if (_state == PlayerStates.Joking)
-            return;
+
         if (fartCurrentCooldown > 0)
             return;
         StartCoroutine(FartRoutine());
@@ -50,7 +48,6 @@ public class JokeBehaviour : MonoBehaviour
     }
     IEnumerator FartRoutine()
     {
-        _state = PlayerStates.Joking;
         isFarting = true;
         yield return new WaitForSeconds(fartActiveTime);
         isFarting = false;
@@ -61,15 +58,12 @@ public class JokeBehaviour : MonoBehaviour
 
     public void OnImitate()
     {
-        if (_state == PlayerStates.Joking)
-            return;
         if (imitateCurrentCooldown > 0)
             return;
         StartCoroutine(ImitateRoutine()); 
     }
     IEnumerator ImitateRoutine()
     {
-        _state = PlayerStates.Joking;
         isImitating = true;
         yield return new WaitForSeconds(funnyFaceActiveTime);
         isImitating = false; 
@@ -79,8 +73,6 @@ public class JokeBehaviour : MonoBehaviour
     }
     public void OnFunnyFace()
     {
-        if (_state == PlayerStates.Joking)
-            return;
         if (funnyFaceCurrentCooldown > 0)
             return;
         StartCoroutine(FunnyFaceRoutine()); 
@@ -88,7 +80,6 @@ public class JokeBehaviour : MonoBehaviour
     }
     IEnumerator FunnyFaceRoutine()
     {
-        _state = PlayerStates.Joking;
         isFunnyFacing = true;
         yield return new WaitForSeconds(funnyFaceActiveTime);
         isFunnyFacing = false; 
@@ -106,9 +97,13 @@ public class JokeBehaviour : MonoBehaviour
     }
     private void Update()
     {
-        if (fartCurrentCooldown <= 0 && imitateCurrentCooldown <= 0 && funnyFaceCurrentCooldown <= 0 && !isFarting && !isImitating && !isFunnyFacing)
+        if (!isFarting && !isImitating && !isFunnyFacing)
         {
-            _state = PlayerStates.Innocent;
+            isJoking = false;  
+        }
+        else
+        {
+            isJoking = true; 
         }
         if (fartCurrentCooldown > 0)
         {
