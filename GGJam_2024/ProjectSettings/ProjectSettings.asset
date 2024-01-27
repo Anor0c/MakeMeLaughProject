@@ -12,9 +12,9 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Trop Forts
   productName: Not Now!!
-  defaultCursor: {fileID: 2800000, guid: e166362278795b14492091ebbd1d2937, type: 3}
+  defaultCursor: {fileID: 2800000, guid: a0aab95db0e6bef4d90653a4a7c3c540, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.43714598, g: 0.30037382, b: 0.509434, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -163,7 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.Not-Now--
+    Standalone: com.Trop-Forts.Not-Now--
   buildNumber:
     Standalone: 0
     VisionOS: 0
