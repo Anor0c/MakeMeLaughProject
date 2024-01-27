@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class LookingCrowd : MonoBehaviour
 {
-    private SpriteRenderer crowdSprite;
-    private JokeBehaviour player;
-    [SerializeField] private UIBar laughBar; 
-
-    private Coroutine AggroRoutine, CalmRoutine;
     [SerializeField] private float damage = 1f; 
     [SerializeField] private float minCalmTimer = 0.5f, maxCalmTimer = 1.5f;
     [SerializeField] private float minLookingTimer = 0.5f, maxLookingTimer = 1.5f;
     [SerializeField] private float activeTimer; 
     [SerializeField] private bool isLooking = false;
+    private const float damageMultiplier = 0.01f;
+
+    private SpriteRenderer crowdSprite;
+    private JokeBehaviour player;
+    [SerializeField] private UIBar shameBar;
+
     void Start()
     {
         crowdSprite = GetComponent<SpriteRenderer>();
-        player = FindObjectOfType<JokeBehaviour>(); 
+        player = FindObjectOfType<JokeBehaviour>();
+        damage *= damageMultiplier; 
         ChooseNextRoutine();
     }
 
@@ -37,7 +39,7 @@ public class LookingCrowd : MonoBehaviour
     {
         if (player.State == PlayerStates.Joking && isLooking)
         {
-            laughBar.UpdateValue(damage);
+            shameBar.UpdateValue(damage);
         }
     }
     private IEnumerator NoLookRoutine()

@@ -260,6 +260,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581300641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7303948732824731710, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+  m_PrefabInstance: {fileID: 1132519579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35163c5dcaeb2c242a601fcdb93d987a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fartDamage: 1
+  imitateDamage: 2
+  funnyFaceDamage: 0.5
   fartCooldown: 2
   imitateCooldown: 5
   funnyFaceCooldown: 7
@@ -451,6 +465,7 @@ MonoBehaviour:
   isFarting: 0
   isImitating: 0
   isFunnyFacing: 0
+  laughBar: {fileID: 1988268385}
 --- !u!1001 &1132519579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -789,7 +804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236215428c8ac8b48ab8df8fd69ccb70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laughBar: {fileID: 1988268385}
   damage: 1
   minCalmTimer: 12
   maxCalmTimer: 17
@@ -797,6 +811,7 @@ MonoBehaviour:
   maxLookingTimer: 2.5
   activeTimer: 0
   isLooking: 0
+  shameBar: {fileID: 0}
 --- !u!1 &1988268383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5177224950033612980, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
@@ -816,7 +831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxValue: 100
   currentValue: 0
-  innerBar: {fileID: 0}
+  innerBar: {fileID: 581300641}
   OnBarEmpty:
     m_PersistentCalls:
       m_Calls: []
