@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 24390976fbfbe664bacfc5373804b0f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fc25dd762c53504f95d7df1e323f40b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,5 +115,5 @@ MonoBehaviour:
   isFarting: 0
   isImitating: 0
   isFunnyFacing: 0
+  isJoking: 0
   laughBar: {fileID: 0}
-  _state: 2
