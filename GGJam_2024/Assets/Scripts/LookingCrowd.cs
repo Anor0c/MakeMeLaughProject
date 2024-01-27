@@ -11,14 +11,14 @@ public class LookingCrowd : MonoBehaviour
     [SerializeField] private bool isLooking = false;
     private const float damageMultiplier = 0.01f;
 
-    private SpriteRenderer crowdSprite;
+    private SpriteRenderer[] crowdSprites;
     private JokeBehaviour player;
     private AudioSource crowdAudio;
     [SerializeField] private UIBar shameBar;
 
     void Start()
     {
-        crowdSprite = GetComponent<SpriteRenderer>();
+        crowdSprites = GetComponentsInChildren<SpriteRenderer>();
         crowdAudio = GetComponent<AudioSource>();
         player = FindObjectOfType<JokeBehaviour>();
         damage *= damageMultiplier;
@@ -47,7 +47,11 @@ public class LookingCrowd : MonoBehaviour
     }
     private IEnumerator NoLookRoutine()
     {
-        crowdSprite.color = Color.gray;
+        foreach (SpriteRenderer sprite in crowdSprites)
+        {
+            sprite.color = Color.gray;
+        }
+
         crowdAudio.Play();
         activeTimer = Random.Range(minCalmTimer, maxCalmTimer);
         yield return new WaitForSeconds(activeTimer);
@@ -59,7 +63,7 @@ public class LookingCrowd : MonoBehaviour
     }
     private IEnumerator LookingRoutine()
     {
-        crowdSprite.color = Color.red;
+        crowdSprites[Random.Range(0, crowdSprites.Length)].color = Color.red;
         crowdAudio.Pause();
         activeTimer = Random.Range(minLookingTimer, maxLookingTimer);
         yield return new WaitForSeconds(activeTimer);
