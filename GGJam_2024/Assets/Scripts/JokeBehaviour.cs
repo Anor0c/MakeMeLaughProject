@@ -7,6 +7,7 @@ public class JokeBehaviour : MonoBehaviour
     private float fartCurrentCooldown, imitateCurrentCooldown, funnyFaceCurrentCooldown;
     private const float damageMultiplier = 0.01f;
     [SerializeField] private float fartDamage = 1f, imitateDamage = 2f, funnyFaceDamage = 0.5f;
+    private float maxFartDamage = 2f; 
     [Space]
     [SerializeField] private float fartCooldown, imitateCooldown, funnyFaceCooldown;
 
@@ -17,7 +18,7 @@ public class JokeBehaviour : MonoBehaviour
     [SerializeField] private bool isFartCooldown, isImitationCooldown, isFunnyFaceCooldown;
     [Space]
     [SerializeField] private bool isFarting, isImitating, isFunnyFacing, isJoking;
-
+    private bool fartHeld; 
     public bool IsFartCooldown { get => isFartCooldown; }
     public bool IsImitationCooldown { get => isImitationCooldown; }
     public bool IsFunnyFaceCooldown { get => isFunnyFaceCooldown; }
@@ -36,6 +37,7 @@ public class JokeBehaviour : MonoBehaviour
         fartDamage *= damageMultiplier;
         imitateDamage *= damageMultiplier;
         funnyFaceDamage *= damageMultiplier;
+        maxFartDamage *= damageMultiplier; 
         whistleReductionRate = minReductionRate; 
     }
     public void OnFart()
@@ -54,6 +56,14 @@ public class JokeBehaviour : MonoBehaviour
         fartCurrentCooldown = fartCooldown;
         yield return null;
         StopCoroutine(FartRoutine()); 
+    }
+    public void FartHold()
+    {
+        fartHeld = true; 
+    }
+    public void FartRelease()
+    {
+        fartHeld = false; 
     }
 
     public void OnImitate()
@@ -143,6 +153,14 @@ public class JokeBehaviour : MonoBehaviour
         if(isFunnyFacing)
         {
             laughBar.UpdateValue(funnyFaceDamage); 
+        }
+        if (fartHeld)
+        {
+            fartDamage += Time.deltaTime/100; 
+        }
+        if (fartDamage >= maxFartDamage)
+        {
+            FartRelease(); 
         }
     }
 }
