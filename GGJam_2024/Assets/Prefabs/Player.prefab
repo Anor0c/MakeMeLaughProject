@@ -100,9 +100,9 @@ MonoBehaviour:
   fartDamage: 1
   imitateDamage: 2
   funnyFaceDamage: 0.5
-  fartCooldown: 2
-  imitateCooldown: 5
-  funnyFaceCooldown: 15
+  fartCooldown: 5
+  imitateCooldown: 8
+  funnyFaceCooldown: 2
   fartActiveTime: 1.5
   imitateActiveTime: 3
   funnyFaceActiveTime: 1

@@ -19,7 +19,10 @@ public class JokeBehaviour : MonoBehaviour
     public bool IsImitationCooldown { get => isImitationCooldown; }
     public bool IsFunnyFaceCooldown { get => isFunnyFaceCooldown; }
     [Space]
-    [SerializeField] private bool isFarting, isImitating, isFunnyFacing; 
+    [SerializeField] private bool isFarting, isImitating, isFunnyFacing;
+    public bool IsFarting { get => isFarting; }
+    public bool IsImitating { get => isImitating; }
+    public bool IsFunnyFacing { get => isFunnyFacing; }
 
 
     [SerializeField] private UIBar laughBar;

@@ -476,6 +476,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8025746112943864504, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1978895510}
+    - targetCorrespondingSourceObject: {fileID: 177339638820594609, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1347524427}
+    - targetCorrespondingSourceObject: {fileID: 4012302326831276853, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1536311633}
   m_SourcePrefab: {fileID: 100100000, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
 --- !u!114 &1282264595 stripped
 MonoBehaviour:
@@ -488,6 +494,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428a2aa831b4cd04385b73fc357337d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1347524422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 177339638820594609, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+  m_PrefabInstance: {fileID: 1132519579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1347524427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347524422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9163c6a59429a5d4cbffb45a2afc349d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  binding: 1
+--- !u!1 &1536311628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4012302326831276853, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+  m_PrefabInstance: {fileID: 1132519579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1536311633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536311628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9163c6a59429a5d4cbffb45a2afc349d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  binding: 2
 --- !u!1 &1978895508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8025746112943864504, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
@@ -707,6 +749,18 @@ PrefabInstance:
       propertyPath: laughBar
       value: 
       objectReference: {fileID: 1988268385}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: fartCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: imitateCooldown
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: funnyFaceCooldown
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
