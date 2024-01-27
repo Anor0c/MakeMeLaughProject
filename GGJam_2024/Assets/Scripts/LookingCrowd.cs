@@ -41,6 +41,7 @@ public class LookingCrowd : MonoBehaviour
     {
         if (player.State == PlayerStates.Joking && isLooking)
         {
+            Debug.Log("SHAME!!!!"); 
             shameBar.UpdateValue(damage);
         }
     }

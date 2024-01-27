@@ -625,18 +625,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3487906659937026442, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3487906659937026442, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3487906659937026442, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3487906659937026442, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -676,18 +664,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3487906659937026442, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6774061384326606787, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
       propertyPath: m_Name
       value: Foule
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837090278388067091, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05dc48dd4c38f804a9d9fbf473d4ef74, type: 3}
+    - target: {fileID: 6837090278388067091, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311242824705929441, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
       propertyPath: shameBar
       value: 
       objectReference: {fileID: 1282264595}
+    - target: {fileID: 8311242824705929441, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
+      propertyPath: maxCalmTimer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311242824705929441, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
+      propertyPath: minCalmTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311242824705929441, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
+      propertyPath: silenceWarning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311242824705929441, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
+      propertyPath: maxLookingTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311242824705929441, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
+      propertyPath: minLookingTimer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

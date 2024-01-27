@@ -113,7 +113,6 @@ public class JokeBehaviour : MonoBehaviour
         if (fartCurrentCooldown > 0)
         {
             fartCurrentCooldown -= Time.deltaTime*whistleReductionRate;
-            _state = PlayerStates.InCooldown;
             isFartCooldown = true; 
         }
         else
@@ -123,7 +122,6 @@ public class JokeBehaviour : MonoBehaviour
         if (imitateCurrentCooldown > 0)
         {
             imitateCurrentCooldown -= Time.deltaTime*whistleReductionRate;
-            _state = PlayerStates.InCooldown;
             isImitationCooldown = true; 
         }
         else
@@ -133,7 +131,6 @@ public class JokeBehaviour : MonoBehaviour
         if (funnyFaceCurrentCooldown > 0)
         {
             funnyFaceCurrentCooldown -= Time.deltaTime*whistleReductionRate;
-            _state = PlayerStates.InCooldown;
             isFunnyFaceCooldown = true; 
         }
         else
