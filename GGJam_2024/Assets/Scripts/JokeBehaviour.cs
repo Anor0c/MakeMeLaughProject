@@ -15,11 +15,13 @@ public class JokeBehaviour : MonoBehaviour
     [SerializeField] private float whistleReductionRate, maxReductionRate, minReductionRate;
     [Space]
     [SerializeField] private bool isFartCooldown, isImitationCooldown, isFunnyFaceCooldown;
+    [Space]
+    [SerializeField] private bool isFarting, isImitating, isFunnyFacing;
+
     public bool IsFartCooldown { get => isFartCooldown; }
     public bool IsImitationCooldown { get => isImitationCooldown; }
     public bool IsFunnyFaceCooldown { get => isFunnyFaceCooldown; }
-    [Space]
-    [SerializeField] private bool isFarting, isImitating, isFunnyFacing;
+
     public bool IsFarting { get => isFarting; }
     public bool IsImitating { get => isImitating; }
     public bool IsFunnyFacing { get => isFunnyFacing; }
