@@ -145,6 +145,7 @@ public class JokeBehaviour : MonoBehaviour
         if (isFarting)
         {
             laughBar.UpdateValue(fartDamage);
+            Debug.Log(fartDamage);
         }
         if(isImitating)
         {
