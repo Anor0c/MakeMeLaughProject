@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class LookingCrowd : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer crowdSprite;
+    private SpriteRenderer crowdSprite;
+    private JokeBehaviour player;
+    [SerializeField] private UIBar laughBar; 
 
-    private Coroutine AggroRoutine, CalmRoutine; 
+    private Coroutine AggroRoutine, CalmRoutine;
+    [SerializeField] private float damage = 1f; 
     [SerializeField] private float minCalmTimer = 0.5f, maxCalmTimer = 1.5f;
     [SerializeField] private float minLookingTimer = 0.5f, maxLookingTimer = 1.5f;
     [SerializeField] private float activeTimer; 
     [SerializeField] private bool isLooking = false;
     void Start()
     {
-        crowdSprite = GetComponent<SpriteRenderer>(); 
-        CheckLooking();
+        crowdSprite = GetComponent<SpriteRenderer>();
+        player = FindObjectOfType<JokeBehaviour>(); 
+        ChooseNextRoutine();
     }
 
-    private void CheckLooking()
+    private void ChooseNextRoutine()
     {
         StopAllCoroutines(); 
         if (!isLooking)
@@ -29,13 +33,20 @@ public class LookingCrowd : MonoBehaviour
             StartCoroutine("LookingRoutine");
         }
     }
+    private void Update()
+    {
+        if (player.State == PlayerStates.Joking && isLooking)
+        {
+            laughBar.UpdateValue(damage);
+        }
+    }
     private IEnumerator NoLookRoutine()
     {
         crowdSprite.color = Color.gray; 
         activeTimer = Random.Range(minCalmTimer, maxCalmTimer);
         yield return new WaitForSeconds(activeTimer);
         isLooking = true;
-        CheckLooking(); 
+        ChooseNextRoutine(); 
         yield return null;
     } 
     private IEnumerator LookingRoutine()
@@ -44,7 +55,7 @@ public class LookingCrowd : MonoBehaviour
         activeTimer = Random.Range(minLookingTimer, maxLookingTimer);
         yield return new WaitForSeconds(activeTimer);
         isLooking = false;
-        CheckLooking(); 
+        ChooseNextRoutine(); 
         yield return null;
     }
 }
