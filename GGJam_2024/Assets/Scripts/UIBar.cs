@@ -11,19 +11,23 @@ public class UIBar : MonoBehaviour
 
     [SerializeField] private Image innerBar;
 
-    public UnityEvent OnBarEmpty; 
+    public UnityEvent OnBarEmpty, onBarDecreased; 
     void Start()
     {
-        currentValue = maxValue; 
+        currentValue = maxValue;
     }
 
-    public void OnUpdateValue(float delta)
+    public void UpdateValue(float delta)
     {
-        currentValue -= delta; 
+        currentValue -= delta;
+
         innerBar.fillAmount = currentValue / maxValue;
+        Debug.Log(innerBar.fillAmount); 
         if (currentValue <= 0)
         {
-            OnBarEmpty.Invoke(); 
+            OnBarEmpty.Invoke();
+            return; 
         }
+        onBarDecreased.Invoke(); 
     }
 }
