@@ -11,19 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/main_menu.unity
     guid: a339e3357cd8ae947bb3c23c43e271d9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LVL_01.unity
     guid: 5d3b1400ceb6f964a901552d05b65b00
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LVL_02.unity
     guid: c196c4f622021944ead4b4adf64c100d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LVL_03.unity
     guid: 752dd6525e2e52d46b47d291eff8ac69
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Winner_Scene.unity
     guid: dcd47ec7f0aa644479b8303b11023886
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lose_scene.unity
     guid: 26c140b46d8260f41bfa78bcb8a50a7c
   m_configObjects: {}
