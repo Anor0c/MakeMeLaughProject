@@ -5,6 +5,5 @@ using UnityEngine;
 public enum PlayerStates 
 {
     Joking, 
-    InCooldown, 
     Innocent
 }
