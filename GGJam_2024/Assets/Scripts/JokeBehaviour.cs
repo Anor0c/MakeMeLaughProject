@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class JokeBehaviour : MonoBehaviour
 {
-    [SerializeField]private float fartCurrentCooldown, imitateCurrentCooldown, funnyFaceCurrentCooldown;
-    private const float damageMultiplier = 0.01f; 
+    private float fartCurrentCooldown, imitateCurrentCooldown, funnyFaceCurrentCooldown;
+    private const float damageMultiplier = 0.01f;
     [SerializeField] private float fartDamage = 1f, imitateDamage = 2f, funnyFaceDamage = 0.5f;
     [Space]
     [SerializeField] private float fartCooldown, imitateCooldown, funnyFaceCooldown;
 
     [SerializeField] private float fartActiveTime, imitateActiveTime, funnyFaceActiveTime;
     [Space]
-    [SerializeField] private float whistleReductionRate, maxReductionRate, minReductionRate;  
+    [SerializeField] private float whistleReductionRate, maxReductionRate, minReductionRate;
     [Space]
     [SerializeField] private bool isFartCooldown, isImitationCooldown, isFunnyFaceCooldown;
+    public bool IsFartCooldown { get => isFartCooldown; }
+    public bool IsImitationCooldown { get => isImitationCooldown; }
+    public bool IsFunnyFaceCooldown { get => isFunnyFaceCooldown; }
     [Space]
     [SerializeField] private bool isFarting, isImitating, isFunnyFacing; 
 
-    [SerializeField] public PlayerStates State { get => _state; }
 
+    [SerializeField] private UIBar laughBar;
 
-    [SerializeField] private UIBar laughBar; 
-    private PlayerStates _state = PlayerStates.Innocent;
+     public PlayerStates State { get => _state; }
+    [SerializeField] private PlayerStates _state = PlayerStates.Innocent;
 
     private void Start()
     {
