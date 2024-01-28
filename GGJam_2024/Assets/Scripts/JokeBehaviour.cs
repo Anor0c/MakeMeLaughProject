@@ -151,7 +151,7 @@ public class JokeBehaviour : MonoBehaviour
         else
         {
             isImitationCooldown = false;
-            imitateButton.interactable = true;
+            //imitateButton.interactable = true;
         }
         if (funnyFaceCurrentCooldown > 0)
         {
@@ -165,15 +165,11 @@ public class JokeBehaviour : MonoBehaviour
         else
         {
             isFunnyFaceCooldown = false;
-            funnyFaceButton.interactable = true;
+            //funnyFaceButton.interactable = true;
         }
         if (isFarting)
         {
             laughBar.UpdateValue(fartDamage);
-        }
-        if (isImitating)
-        {
-            //laughBar.UpdateValue(imitateDamage); 
         }
         if (isFunnyFacing)
         {
@@ -181,7 +177,7 @@ public class JokeBehaviour : MonoBehaviour
         }
         if (fartHeld && !isFartCooldown)
         {
-            fartDamage += Time.deltaTime / 100;
+            fartDamage += Time.deltaTime / 200;
         }
         if (fartDamage >= maxFartDamage)
         {
