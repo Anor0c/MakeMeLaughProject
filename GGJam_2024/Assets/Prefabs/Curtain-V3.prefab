@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 532275673489514363, guid: 9a6c2c01f60a27247a7607514e0dbf20, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355911032334921807, guid: 9a6c2c01f60a27247a7607514e0dbf20, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6488542121580594552, guid: 9a6c2c01f60a27247a7607514e0dbf20, type: 3}
       propertyPath: m_Name
-      value: Curtain-V2 Variant
+      value: Curtain-V3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149795230408522869, guid: 9a6c2c01f60a27247a7607514e0dbf20, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7371248354118398991, guid: 9a6c2c01f60a27247a7607514e0dbf20, type: 3}
       propertyPath: m_LocalPosition.x
