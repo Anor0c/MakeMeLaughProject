@@ -1357,6 +1357,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 643634255829199243, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 851746424673714745, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2447350624559818997, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       propertyPath: m_Name
       value: UI_AttackButton
@@ -1369,14 +1377,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1986636777}
-    - target: {fileID: 3683950994153543695, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnWhistle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3683950994153543695, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnStopWhistle
-      objectReference: {fileID: 0}
     - target: {fileID: 3755069275398267821, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1505,13 +1505,17 @@ PrefabInstance:
       propertyPath: OnBarEmpty.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6362124033409497702, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7010210064833044656, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1986636777}
-    - target: {fileID: 7010210064833044656, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnImitate
+    - target: {fileID: 7356091542097520543, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7593227263320110060, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       propertyPath: imitateClones.Array.size
