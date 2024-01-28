@@ -350,10 +350,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: FouleManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1655884947538009185, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05dc48dd4c38f804a9d9fbf473d4ef74, type: 3}
+    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
       propertyPath: shameBar
       value: 
       objectReference: {fileID: 1433047296}
+    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: maxCalmTimer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: minCalmTimer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: maxLookingTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: minLookingTimer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8780561707258357029, guid: 962243cbbdb0659449e766220f10115e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.07143375
@@ -1010,6 +1034,10 @@ PrefabInstance:
       value: OnFunnyFace
       objectReference: {fileID: 0}
     - target: {fileID: 4914989272550098017, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
+      propertyPath: maxValue
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914989272550098017, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       propertyPath: OnBarEmpty.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1071,7 +1099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5911004074162575565, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       propertyPath: maxValue
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5911004074162575565, guid: aec9d68a9ebc06e4d8af226258ae91e8, type: 3}
       propertyPath: OnBarEmpty.m_PersistentCalls.m_Calls.Array.size
@@ -1451,9 +1479,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1433047301}
     - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: fartDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
       propertyPath: imitateButton
       value: 
       objectReference: {fileID: 1433047299}
+    - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
+      propertyPath: imitateDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
       propertyPath: funnyFaceButton
       value: 
