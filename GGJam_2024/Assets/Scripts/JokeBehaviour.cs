@@ -31,16 +31,18 @@ public class JokeBehaviour : MonoBehaviour
 
 
     [SerializeField] private UIBar laughBar;
-    [SerializeField] private Button fartButton, imitateButton, funnyFaceButton; 
+    [SerializeField] private Button fartButton, imitateButton, funnyFaceButton;
+    private ImitateMinigame imitateGame;
 
 
     private void Start()
     {
         fartDamage *= damageMultiplier;
-        imitateDamage *= damageMultiplier;
+        //imitateDamage *= damageMultiplier;
         funnyFaceDamage *= damageMultiplier;
         maxFartDamage *= damageMultiplier; 
-        whistleReductionRate = minReductionRate; 
+        whistleReductionRate = minReductionRate;
+        imitateGame = FindObjectOfType<ImitateMinigame>(); 
     }
     public void OnFart()
     {
@@ -73,6 +75,8 @@ public class JokeBehaviour : MonoBehaviour
     {
         if (imitateCurrentCooldown > 0)
             return;
+        laughBar.UpdateValue(imitateDamage);
+        imitateGame.ShuffleClones();
         StartCoroutine(ImitateRoutine()); 
     }
     IEnumerator ImitateRoutine()
@@ -80,7 +84,8 @@ public class JokeBehaviour : MonoBehaviour
         isImitating = true;
         imitateButton.interactable = false; 
         yield return new WaitForSeconds(funnyFaceActiveTime);
-        isImitating = false; 
+        isImitating = false;
+        imitateGame.DeactivateClones(); 
         imitateCurrentCooldown = imitateCooldown;
         yield return null;
         StopCoroutine(ImitateRoutine()); 
@@ -156,7 +161,7 @@ public class JokeBehaviour : MonoBehaviour
         }
         if(isImitating)
         {
-            laughBar.UpdateValue(imitateDamage); 
+            //laughBar.UpdateValue(imitateDamage); 
         }
         if(isFunnyFacing)
         {
