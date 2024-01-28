@@ -22,7 +22,6 @@ public class UIBar : MonoBehaviour
         currentValue -= delta;
 
         innerBar.fillAmount = currentValue / maxValue;
-        Debug.Log(innerBar.fillAmount); 
         if (currentValue <= 0)
         {
             OnBarEmpty.Invoke();
