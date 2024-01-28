@@ -51,7 +51,7 @@ MonoBehaviour:
   minLookingTimer: 0.5
   maxLookingTimer: 1.5
   activeTimer: 0
-  silenceWarning: 0
+  silenceWarning: 3
   isLooking: 0
   shameBar: {fileID: 0}
 --- !u!82 &1655884947538009185
@@ -64,7 +64,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 05dc48dd4c38f804a9d9fbf473d4ef74, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
