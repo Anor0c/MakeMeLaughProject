@@ -47,10 +47,10 @@ public class LookingCrowd : MonoBehaviour
     }
     private IEnumerator NoLookRoutine()
     {
-        /*foreach (SpriteRenderer sprite in crowdSprites)
+        foreach (SpriteRenderer sprite in crowdSprites)
         {
-            sprite.color = Color.gray;
-        }*/
+            sprite.color = Color.white;
+        }
         
         crowdAudio.Play();
         activeTimer = Random.Range(minCalmTimer, maxCalmTimer);
