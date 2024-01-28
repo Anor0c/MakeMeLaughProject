@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Events; 
 
 public class TimeOut : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class TimeOut : MonoBehaviour
     [SerializeField] private Image uifill;
     public float timestart = 0;
 
+    public UnityEvent OnTimerStop; 
     void Start()
     {
         timeISRunning = true;
@@ -39,7 +41,7 @@ public class TimeOut : MonoBehaviour
         timeToDisplay -= 1;
         if (timeRemaining <= 2)
         {
-            menu.Startgame();
+            OnTimerStop.Invoke(); 
         }
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
