@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5144699159884083147}
   - component: {fileID: 2825714389610135343}
   - component: {fileID: 8629205325284060098}
+  - component: {fileID: 776888998961465565}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -117,3 +118,33 @@ MonoBehaviour:
   isFunnyFacing: 0
   isJoking: 0
   laughBar: {fileID: 0}
+  fartButton: {fileID: 0}
+  imitateButton: {fileID: 0}
+  funnyFaceButton: {fileID: 0}
+  OnJoking:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNotJoking:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!95 &776888998961465565
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859117229829279861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
