@@ -10,12 +10,13 @@ public class LookingCrowd : MonoBehaviour
     [SerializeField] private float activeTimer, silenceWarning;
     [SerializeField] private bool isLooking = false;
     private const float damageMultiplier = 0.01f;
+    private int currentIndex;
 
     private SpriteRenderer[] crowdSprites;
     private JokeBehaviour player;
     private AudioSource crowdAudio;
+    private Animator anim;
     [SerializeField] private UIBar shameBar;
-
     void Start()
     {
         crowdSprites = GetComponentsInChildren<SpriteRenderer>();
@@ -31,10 +32,12 @@ public class LookingCrowd : MonoBehaviour
         if (!isLooking)
         {
             StartCoroutine("NoLookRoutine");
+            NoLookAnim(); 
         }
         if (isLooking)
         {
             StartCoroutine("LookingRoutine");
+            LookAnim();
         }
     }
     private void Update()
@@ -51,7 +54,7 @@ public class LookingCrowd : MonoBehaviour
         {
             sprite.color = Color.white;
         }
-        
+
         crowdAudio.Play();
         activeTimer = Random.Range(minCalmTimer, maxCalmTimer);
         yield return new WaitForSeconds(activeTimer);
@@ -63,12 +66,23 @@ public class LookingCrowd : MonoBehaviour
     }
     private IEnumerator LookingRoutine()
     {
-        crowdSprites[Random.Range(0, crowdSprites.Length)].color = Color.red;
+        currentIndex = Random.Range(0, crowdSprites.Length);
+        crowdSprites[currentIndex].color = Color.red;
         crowdAudio.Pause();
         activeTimer = Random.Range(minLookingTimer, maxLookingTimer);
         yield return new WaitForSeconds(activeTimer);
         isLooking = false;
         ChooseNextRoutine();
         yield return null;
+    }
+    private void LookAnim()
+    {
+        anim = crowdSprites[currentIndex].gameObject.GetComponent<Animator>();
+        anim.SetBool("IsLook", true);
+    }
+    private void NoLookAnim()
+    {
+        anim = crowdSprites[currentIndex].gameObject.GetComponent<Animator>();
+        anim.SetBool("IsLook", false);
     }
 }
