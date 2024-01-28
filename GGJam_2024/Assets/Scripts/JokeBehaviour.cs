@@ -33,7 +33,7 @@ public class JokeBehaviour : MonoBehaviour
     [SerializeField] private UIBar laughBar;
     [SerializeField] private Button fartButton, imitateButton, funnyFaceButton;
     private ImitateMinigame imitateGame;
-
+    private FunnyFaceMinigame funnyFaceMinigame; 
 
     private void Start()
     {
@@ -43,6 +43,7 @@ public class JokeBehaviour : MonoBehaviour
         maxFartDamage *= damageMultiplier;
         whistleReductionRate = minReductionRate;
         imitateGame = FindObjectOfType<ImitateMinigame>();
+        funnyFaceMinigame = FindObjectOfType<FunnyFaceMinigame>(); 
     }
     public void OnFart()
     {
@@ -99,11 +100,24 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator FunnyFaceRoutine()
     {
         isFunnyFacing = true;
-        yield return new WaitForSeconds(funnyFaceActiveTime);
+        yield return new WaitForSeconds(funnyFaceActiveTime/4);
+        funnyFaceMinigame.ActivateChargeImage(0, Color.red); 
+        yield return new WaitForSeconds(funnyFaceActiveTime/4);
+        funnyFaceMinigame.ActivateChargeImage(1, Color.yellow); 
+        yield return new WaitForSeconds(funnyFaceActiveTime/4);
+        funnyFaceMinigame.ActivateChargeImage(2, Color.green);
+        funnyFaceMinigame.SetupBonusClick(OnFunnyFaceBonus); 
+        yield return new WaitForSeconds(funnyFaceActiveTime/4);
         isFunnyFacing = false;
         funnyFaceCurrentCooldown = funnyFaceCooldown;
         yield return null;
+        funnyFaceMinigame.DeactivateAllChargeImage(); 
         StopCoroutine(FunnyFaceRoutine());
+    }
+    private void OnFunnyFaceBonus()
+    {
+        funnyFaceButton.interactable = true; 
+        laughBar.UpdateValue(3*funnyFaceDamage / damageMultiplier);
     }
     public void OnWhistle()
     {
@@ -165,6 +179,10 @@ public class JokeBehaviour : MonoBehaviour
         if (!isImitating && !isImitationCooldown)
         {
             imitateButton.interactable = true; 
+        }
+        if (!isFunnyFacing && !isFunnyFaceCooldown)
+        {
+            funnyFaceButton.interactable = true; 
         }
 
         if (isFarting)
