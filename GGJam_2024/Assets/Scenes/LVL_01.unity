@@ -785,10 +785,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6774061384326606787, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 280355715}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ead11ea36f0bf8447a4926bd18215c44, type: 3}
 --- !u!1001 &507387851
 PrefabInstance:
@@ -1784,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 1096417393169188704, guid: 8da4e1396228b4042a7edf7fecb5d963, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d304ba1510691784bb16754c16e15fde, type: 3}
+      objectReference: {fileID: 21300000, guid: f30745e6fcdc49445bac7d99fcb68d8b, type: 3}
     - target: {fileID: 1096417393169188704, guid: 8da4e1396228b4042a7edf7fecb5d963, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1827,7 +1824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3763918251606639187, guid: 8da4e1396228b4042a7edf7fecb5d963, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 241
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 3763918251606639187, guid: 8da4e1396228b4042a7edf7fecb5d963, type: 3}
       propertyPath: m_SizeDelta.y
