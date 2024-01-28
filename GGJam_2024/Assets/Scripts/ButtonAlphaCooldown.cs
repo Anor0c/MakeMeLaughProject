@@ -43,9 +43,13 @@ public class ButtonAlphaCooldown : MonoBehaviour
             default:
                 break;
         }
-        if (isCooldown || isJoking) 
+        if (isCooldown  ) 
         {
             buttonImage.color = new Vector4(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0.1f);
+        }
+        else if (isJoking)
+        {
+            buttonImage.color = new Vector4(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0.9f);
         }
         else
         {
