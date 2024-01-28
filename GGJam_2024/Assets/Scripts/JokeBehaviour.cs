@@ -111,7 +111,7 @@ public class JokeBehaviour : MonoBehaviour
         isFunnyFacing = false;
         funnyFaceCurrentCooldown = funnyFaceCooldown;
         yield return null;
-        funnyFaceMinigame.DeactivateAllChargeImage(); 
+        funnyFaceMinigame.DeactivateAllChargeImage();
         StopCoroutine(FunnyFaceRoutine());
     }
     private void OnFunnyFaceBonus()
@@ -173,6 +173,7 @@ public class JokeBehaviour : MonoBehaviour
         }
         else
         {
+            funnyFaceMinigame.SetupDefaultClick(OnFunnyFace);
             isFunnyFaceCooldown = false;
         }
 
