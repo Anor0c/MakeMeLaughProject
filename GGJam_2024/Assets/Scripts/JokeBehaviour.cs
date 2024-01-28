@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class JokeBehaviour : MonoBehaviour
 {
     private float fartCurrentCooldown, imitateCurrentCooldown, funnyFaceCurrentCooldown;
     private const float damageMultiplier = 0.01f;
     [SerializeField] private float fartDamage = 1f, imitateDamage = 2f, funnyFaceDamage = 0.5f;
-    private float maxFartDamage = 2f; 
+    private float maxFartDamage = 2f;
     [Space]
     [SerializeField] private float fartCooldown, imitateCooldown, funnyFaceCooldown;
 
@@ -19,7 +19,7 @@ public class JokeBehaviour : MonoBehaviour
     [SerializeField] private bool isFartCooldown, isImitationCooldown, isFunnyFaceCooldown;
     [Space]
     [SerializeField] private bool isFarting, isImitating, isFunnyFacing, isJoking;
-    private bool fartHeld; 
+    private bool fartHeld;
     public bool IsFartCooldown { get => isFartCooldown; }
     public bool IsImitationCooldown { get => isImitationCooldown; }
     public bool IsFunnyFaceCooldown { get => isFunnyFaceCooldown; }
@@ -40,9 +40,9 @@ public class JokeBehaviour : MonoBehaviour
         fartDamage *= damageMultiplier;
         //imitateDamage *= damageMultiplier;
         funnyFaceDamage *= damageMultiplier;
-        maxFartDamage *= damageMultiplier; 
+        maxFartDamage *= damageMultiplier;
         whistleReductionRate = minReductionRate;
-        imitateGame = FindObjectOfType<ImitateMinigame>(); 
+        imitateGame = FindObjectOfType<ImitateMinigame>();
     }
     public void OnFart()
     {
@@ -55,20 +55,20 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator FartRoutine()
     {
         isFarting = true;
-        fartButton.interactable = false; 
+        fartButton.interactable = false;
         yield return new WaitForSeconds(fartActiveTime);
         isFarting = false;
         fartCurrentCooldown = fartCooldown;
         yield return null;
-        StopCoroutine(FartRoutine()); 
+        StopCoroutine(FartRoutine());
     }
     public void FartHold()
     {
-        fartHeld = true; 
+        fartHeld = true;
     }
     public void FartRelease()
     {
-        fartHeld = false; 
+        fartHeld = false;
     }
 
     public void OnImitate()
@@ -77,35 +77,35 @@ public class JokeBehaviour : MonoBehaviour
             return;
         laughBar.UpdateValue(imitateDamage);
         imitateGame.ShuffleClones();
-        StartCoroutine(ImitateRoutine()); 
+        StartCoroutine(ImitateRoutine());
     }
     IEnumerator ImitateRoutine()
     {
         isImitating = true;
-        imitateButton.interactable = false; 
+        imitateButton.interactable = false;
         yield return new WaitForSeconds(funnyFaceActiveTime);
         isImitating = false;
-        imitateGame.DeactivateClones(); 
+        imitateGame.DeactivateClones();
         imitateCurrentCooldown = imitateCooldown;
         yield return null;
-        StopCoroutine(ImitateRoutine()); 
+        StopCoroutine(ImitateRoutine());
     }
     public void OnFunnyFace()
     {
         if (funnyFaceCurrentCooldown > 0)
             return;
-        StartCoroutine(FunnyFaceRoutine()); 
+        StartCoroutine(FunnyFaceRoutine());
 
     }
     IEnumerator FunnyFaceRoutine()
     {
         isFunnyFacing = true;
-        funnyFaceButton.interactable = false; 
+        funnyFaceButton.interactable = false;
         yield return new WaitForSeconds(funnyFaceActiveTime);
-        isFunnyFacing = false; 
-        funnyFaceCurrentCooldown = funnyFaceCooldown; 
+        isFunnyFacing = false;
+        funnyFaceCurrentCooldown = funnyFaceCooldown;
         yield return null;
-        StopCoroutine(FunnyFaceRoutine()); 
+        StopCoroutine(FunnyFaceRoutine());
     }
     public void OnWhistle()
     {
@@ -113,67 +113,79 @@ public class JokeBehaviour : MonoBehaviour
     }
     public void OnStopWhistle()
     {
-        whistleReductionRate = minReductionRate; 
+        whistleReductionRate = minReductionRate;
     }
     private void Update()
     {
         if (!isFarting && !isImitating && !isFunnyFacing)
         {
-            isJoking = false;  
+            isJoking = false;
         }
         else
         {
-            isJoking = true; 
+            isJoking = true;
         }
         if (fartCurrentCooldown > 0)
         {
-            fartCurrentCooldown -= Time.deltaTime*whistleReductionRate;
-            isFartCooldown = true; 
+            fartCurrentCooldown -= Time.deltaTime * whistleReductionRate;
+            isFartCooldown = true;
+        }
+        else if (isFarting)
+        {
+            isFartCooldown = false;
         }
         else
         {
             isFartCooldown = false;
-            fartButton.interactable = true; 
+            fartButton.interactable = true;
         }
         if (imitateCurrentCooldown > 0)
         {
-            imitateCurrentCooldown -= Time.deltaTime*whistleReductionRate;
-            isImitationCooldown = true; 
+            imitateCurrentCooldown -= Time.deltaTime * whistleReductionRate;
+            isImitationCooldown = true;
+        }
+        else if (isImitating)
+        {
+            isImitationCooldown = false;
         }
         else
         {
             isImitationCooldown = false;
-            imitateButton.interactable = true; 
+            imitateButton.interactable = true;
         }
         if (funnyFaceCurrentCooldown > 0)
         {
-            funnyFaceCurrentCooldown -= Time.deltaTime*whistleReductionRate;
-            isFunnyFaceCooldown = true; 
+            funnyFaceCurrentCooldown -= Time.deltaTime * whistleReductionRate;
+            isFunnyFaceCooldown = true;
+        }
+        else if (isFunnyFacing)
+        {
+            isFunnyFaceCooldown = false;
         }
         else
         {
             isFunnyFaceCooldown = false;
-            funnyFaceButton.interactable = true; 
+            funnyFaceButton.interactable = true;
         }
         if (isFarting)
         {
             laughBar.UpdateValue(fartDamage);
         }
-        if(isImitating)
+        if (isImitating)
         {
             //laughBar.UpdateValue(imitateDamage); 
         }
-        if(isFunnyFacing)
+        if (isFunnyFacing)
         {
-            laughBar.UpdateValue(funnyFaceDamage); 
+            laughBar.UpdateValue(funnyFaceDamage);
         }
-        if (fartHeld&&!isFartCooldown)
+        if (fartHeld && !isFartCooldown)
         {
-            fartDamage += Time.deltaTime/100; 
+            fartDamage += Time.deltaTime / 100;
         }
         if (fartDamage >= maxFartDamage)
         {
-            FartRelease(); 
+            FartRelease();
         }
     }
 }
