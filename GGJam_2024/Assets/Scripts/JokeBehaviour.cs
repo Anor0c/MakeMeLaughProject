@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class JokeBehaviour : MonoBehaviour
 {
@@ -33,7 +34,8 @@ public class JokeBehaviour : MonoBehaviour
     [SerializeField] private UIBar laughBar;
     [SerializeField] private Button fartButton, imitateButton, funnyFaceButton;
     private ImitateMinigame imitateGame;
-    private FunnyFaceMinigame funnyFaceMinigame; 
+    private FunnyFaceMinigame funnyFaceMinigame;
+    public UnityEvent OnJoking, OnNotJoking;  
 
     private void Start()
     {
@@ -201,6 +203,14 @@ public class JokeBehaviour : MonoBehaviour
         if (fartDamage >= maxFartDamage)
         {
             FartRelease();
+        }
+        if (isJoking)
+        {
+            OnJoking.Invoke(); 
+        }
+        else
+        {
+            OnNotJoking.Invoke(); 
         }
     }
 }
