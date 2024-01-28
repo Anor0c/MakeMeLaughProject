@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ImitateMinigame : MonoBehaviour
 {
-    [SerializeField] private float maxX, minX, maxY, minY;
-    [SerializeField] private float damage = 2f;
+    [SerializeField] private float maxX = 1500f, minX = 450f, maxY = 250f, minY = -150f;
+    [SerializeField] private float damage = 4f;
     [SerializeField] private RectTransform[] imitateClones;
     [SerializeField] private UIBar laughBar;
 
@@ -15,12 +15,12 @@ public class ImitateMinigame : MonoBehaviour
         foreach (RectTransform clone in imitateClones)
         {
             clone.anchoredPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-            clone.gameObject.SetActive(true); 
+            clone.gameObject.SetActive(true);
         }
     }
     public void DeactivateClones()
     {
-        foreach(RectTransform clone in imitateClones)
+        foreach (RectTransform clone in imitateClones)
         {
             clone.gameObject.SetActive(false);
         }

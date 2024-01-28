@@ -82,7 +82,6 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator ImitateRoutine()
     {
         isImitating = true;
-        imitateButton.interactable = false;
         yield return new WaitForSeconds(funnyFaceActiveTime);
         isImitating = false;
         imitateGame.DeactivateClones();
@@ -100,7 +99,6 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator FunnyFaceRoutine()
     {
         isFunnyFacing = true;
-        funnyFaceButton.interactable = false;
         yield return new WaitForSeconds(funnyFaceActiveTime);
         isFunnyFacing = false;
         funnyFaceCurrentCooldown = funnyFaceCooldown;
@@ -151,22 +149,24 @@ public class JokeBehaviour : MonoBehaviour
         else
         {
             isImitationCooldown = false;
-            //imitateButton.interactable = true;
         }
+
+
         if (funnyFaceCurrentCooldown > 0)
         {
             funnyFaceCurrentCooldown -= Time.deltaTime * whistleReductionRate;
             isFunnyFaceCooldown = true;
         }
-        else if (isFunnyFacing)
-        {
-            isFunnyFaceCooldown = false;
-        }
         else
         {
             isFunnyFaceCooldown = false;
-            //funnyFaceButton.interactable = true;
         }
+
+        if (!isImitating && !isImitationCooldown)
+        {
+            imitateButton.interactable = true; 
+        }
+
         if (isFarting)
         {
             laughBar.UpdateValue(fartDamage);
