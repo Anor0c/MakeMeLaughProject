@@ -119,7 +119,7 @@ public class JokeBehaviour : MonoBehaviour
     private void OnFunnyFaceBonus()
     {
         funnyFaceButton.interactable = true; 
-        laughBar.UpdateValue(3*funnyFaceDamage / damageMultiplier);
+        laughBar.UpdateValue(5*funnyFaceDamage / damageMultiplier);
     }
     public void OnWhistle()
     {
