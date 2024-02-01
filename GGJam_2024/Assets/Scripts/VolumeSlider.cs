@@ -5,15 +5,17 @@ using UnityEngine.Audio;
 
 public class VolumeSlider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private AudioMixer mix;
+    public void MainVolume(float volume)
     {
-        
+        mix.SetFloat("MasterVolume", volume); 
     }
-
-    // Update is called once per frame
-    void Update()
+    public void MusicVolume(float volume)
     {
-        
+        mix.SetFloat("MusicVolume", volume);
+    }
+    public void SFXVolume(float volume)
+    {
+        mix.SetFloat("SFXVolume", volume);
     }
 }
