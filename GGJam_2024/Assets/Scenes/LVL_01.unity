@@ -446,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 520875562818528777, guid: 4de4916c762593a448bd25db0d082129, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 430
+      value: 470
       objectReference: {fileID: 0}
     - target: {fileID: 3303204560973300294, guid: 4de4916c762593a448bd25db0d082129, type: 3}
       propertyPath: OnTimerStop.m_PersistentCalls.m_Calls.Array.size
@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8095201569022177972, guid: 4de4916c762593a448bd25db0d082129, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 430
+      value: 470
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
