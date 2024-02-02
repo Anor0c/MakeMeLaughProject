@@ -35,7 +35,8 @@ public class JokeBehaviour : MonoBehaviour
     [SerializeField] private Button fartButton, imitateButton, funnyFaceButton;
     private ImitateMinigame imitateGame;
     private FunnyFaceMinigame funnyFaceMinigame;
-    public UnityEvent OnJoking, OnNotJoking;  
+    private Animator anim;
+    public UnityEvent OnJoking, OnNotJoking;
 
     private void Start()
     {
@@ -45,7 +46,8 @@ public class JokeBehaviour : MonoBehaviour
         maxFartDamage *= damageMultiplier;
         whistleReductionRate = minReductionRate;
         imitateGame = FindObjectOfType<ImitateMinigame>();
-        funnyFaceMinigame = FindObjectOfType<FunnyFaceMinigame>(); 
+        funnyFaceMinigame = FindObjectOfType<FunnyFaceMinigame>();
+        anim = GetComponent<Animator>();
     }
     public void OnFart()
     {
@@ -53,7 +55,7 @@ public class JokeBehaviour : MonoBehaviour
         if (fartCurrentCooldown > 0)
             return;
         StartCoroutine(FartRoutine());
-
+        anim.SetBool("IsFart", true);
     }
     IEnumerator FartRoutine()
     {
@@ -63,6 +65,7 @@ public class JokeBehaviour : MonoBehaviour
         isFarting = false;
         fartCurrentCooldown = fartCooldown;
         yield return null;
+        anim.SetBool("IsFart", false);
         StopCoroutine(FartRoutine());
     }
     public void FartHold()
@@ -81,6 +84,7 @@ public class JokeBehaviour : MonoBehaviour
         laughBar.UpdateValue(imitateDamage);
         imitateGame.ShuffleClones();
         StartCoroutine(ImitateRoutine());
+        anim.SetBool("IsImitation", true);
     }
     IEnumerator ImitateRoutine()
     {
@@ -90,36 +94,39 @@ public class JokeBehaviour : MonoBehaviour
         imitateGame.DeactivateClones();
         imitateCurrentCooldown = imitateCooldown;
         yield return null;
+        anim.SetBool("IsImitation", false);
         StopCoroutine(ImitateRoutine());
     }
     public void OnFunnyFace()
     {
         if (funnyFaceCurrentCooldown > 0)
             return;
+        anim.SetBool("IsFunnyFace", true);
         StartCoroutine(FunnyFaceRoutine());
 
     }
     IEnumerator FunnyFaceRoutine()
     {
         isFunnyFacing = true;
-        yield return new WaitForSeconds(funnyFaceActiveTime/4);
-        funnyFaceMinigame.ActivateChargeImage(0, Color.red); 
-        yield return new WaitForSeconds(funnyFaceActiveTime/4);
-        funnyFaceMinigame.ActivateChargeImage(1, Color.yellow); 
-        yield return new WaitForSeconds(funnyFaceActiveTime/4);
+        yield return new WaitForSeconds(funnyFaceActiveTime / 4);
+        funnyFaceMinigame.ActivateChargeImage(0, Color.red);
+        yield return new WaitForSeconds(funnyFaceActiveTime / 4);
+        funnyFaceMinigame.ActivateChargeImage(1, Color.yellow);
+        yield return new WaitForSeconds(funnyFaceActiveTime / 4);
         funnyFaceMinigame.ActivateChargeImage(2, Color.green);
-        funnyFaceMinigame.SetupBonusClick(OnFunnyFaceBonus); 
-        yield return new WaitForSeconds(funnyFaceActiveTime/4);
+        funnyFaceMinigame.SetupBonusClick(OnFunnyFaceBonus);
+        yield return new WaitForSeconds(funnyFaceActiveTime / 4);
         isFunnyFacing = false;
         funnyFaceCurrentCooldown = funnyFaceCooldown;
         yield return null;
         funnyFaceMinigame.DeactivateAllChargeImage();
+        anim.SetBool("IsFunnyFace", false);
         StopCoroutine(FunnyFaceRoutine());
     }
     private void OnFunnyFaceBonus()
     {
-        funnyFaceButton.interactable = true; 
-        laughBar.UpdateValue(5*funnyFaceDamage / damageMultiplier);
+        funnyFaceButton.interactable = true;
+        laughBar.UpdateValue(5 * funnyFaceDamage / damageMultiplier);
     }
     public void OnWhistle()
     {
@@ -181,11 +188,11 @@ public class JokeBehaviour : MonoBehaviour
 
         if (!isImitating && !isImitationCooldown)
         {
-            imitateButton.interactable = true; 
+            imitateButton.interactable = true;
         }
         if (!isFunnyFacing && !isFunnyFaceCooldown)
         {
-            funnyFaceButton.interactable = true; 
+            funnyFaceButton.interactable = true;
         }
 
         if (isFarting)
@@ -206,11 +213,11 @@ public class JokeBehaviour : MonoBehaviour
         }
         if (isJoking)
         {
-            OnJoking.Invoke(); 
+            OnJoking.Invoke();
         }
         else
         {
-            OnNotJoking.Invoke(); 
+            OnNotJoking.Invoke();
         }
     }
 }
