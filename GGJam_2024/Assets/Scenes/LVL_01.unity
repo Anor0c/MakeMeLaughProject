@@ -1074,7 +1074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
       propertyPath: funnyFaceActiveTime
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8629205325284060098, guid: 849867525cabd054fbfd649d588ac6bc, type: 3}
       propertyPath: OnJoking.m_PersistentCalls.m_Calls.Array.size
