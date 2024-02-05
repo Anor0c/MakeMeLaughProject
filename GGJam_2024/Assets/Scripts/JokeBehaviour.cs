@@ -36,7 +36,7 @@ public class JokeBehaviour : MonoBehaviour
     private ImitateMinigame imitateGame;
     private FunnyFaceMinigame funnyFaceMinigame;
     private Animator anim;
-    public UnityEvent OnJoking, OnNotJoking;
+    public UnityEvent OnJoking, OnNotJoking, OnEndJoke;
 
     private void Start()
     {
@@ -66,6 +66,7 @@ public class JokeBehaviour : MonoBehaviour
         fartCurrentCooldown = fartCooldown;
         yield return null;
         anim.SetBool("IsFart", false);
+        OnEndJoke.Invoke(); 
         StopCoroutine(FartRoutine());
     }
     public void FartHold()
@@ -89,12 +90,13 @@ public class JokeBehaviour : MonoBehaviour
     IEnumerator ImitateRoutine()
     {
         isImitating = true;
-        yield return new WaitForSeconds(funnyFaceActiveTime);
+        yield return new WaitForSeconds(imitateActiveTime);
         isImitating = false;
         imitateGame.DeactivateClones();
         imitateCurrentCooldown = imitateCooldown;
         yield return null;
         anim.SetBool("IsImitation", false);
+        OnEndJoke.Invoke(); 
         StopCoroutine(ImitateRoutine());
     }
     public void OnFunnyFace()
@@ -121,6 +123,7 @@ public class JokeBehaviour : MonoBehaviour
         yield return null;
         funnyFaceMinigame.DeactivateAllChargeImage();
         anim.SetBool("IsFunnyFace", false);
+        OnEndJoke.Invoke(); 
         StopCoroutine(FunnyFaceRoutine());
     }
     private void OnFunnyFaceBonus()
@@ -135,6 +138,18 @@ public class JokeBehaviour : MonoBehaviour
     public void OnStopWhistle()
     {
         whistleReductionRate = minReductionRate;
+    }
+    public void StopFartAnim()
+    {
+        anim.SetBool("IsFart", false); 
+    }
+    public void StopFunnyFaceAnim()
+    {
+        anim.SetBool("IsFunnyFace", false); 
+    } 
+    public void StopImitateAnim()
+    {
+        anim.SetBool("IsImitation", false); 
     }
     private void Update()
     {
