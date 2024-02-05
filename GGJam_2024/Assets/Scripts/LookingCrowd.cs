@@ -8,7 +8,7 @@ public class LookingCrowd : MonoBehaviour
     [SerializeField] private float minCalmTimer = 0.5f, maxCalmTimer = 1.5f;
     [SerializeField] private float minLookingTimer = 0.5f, maxLookingTimer = 1.5f;
     [SerializeField] private float activeTimer, silenceWarning;
-    [SerializeField] private bool isLooking = false;
+    [SerializeField] private bool isLooking = false, isLookingRoutine = false;
     private const float damageMultiplier = 0.01f;
     private int currentIndex;
 
@@ -29,12 +29,12 @@ public class LookingCrowd : MonoBehaviour
     private void ChooseNextRoutine()
     {
         StopAllCoroutines();
-        if (!isLooking)
+        if (!isLookingRoutine)
         {
             StartCoroutine("NoLookRoutine");
             NoLookAnim(); 
         }
-        if (isLooking)
+        if (isLookingRoutine)
         {
             StartCoroutine("LookingRoutine");
             LookAnim();
@@ -50,28 +50,28 @@ public class LookingCrowd : MonoBehaviour
     }
     private IEnumerator NoLookRoutine()
     {
+        isLooking = false; 
         foreach (SpriteRenderer sprite in crowdSprites)
         {
             sprite.color = Color.white;
         }
-
+        currentIndex = Random.Range(0, crowdSprites.Length);
         crowdAudio.Play();
         activeTimer = Random.Range(minCalmTimer, maxCalmTimer);
         yield return new WaitForSeconds(activeTimer);
-        crowdAudio.Pause();
-        yield return new WaitForSeconds(silenceWarning);
-        isLooking = true;
+        isLookingRoutine = true;
         ChooseNextRoutine();
         yield return null;
     }
     private IEnumerator LookingRoutine()
     {
-        currentIndex = Random.Range(0, crowdSprites.Length);
-        crowdSprites[currentIndex].color = Color.red;
         crowdAudio.Pause();
+        crowdSprites[currentIndex].color = Color.red;
+        yield return new WaitForSeconds(silenceWarning);
+        isLooking = true; 
         activeTimer = Random.Range(minLookingTimer, maxLookingTimer);
         yield return new WaitForSeconds(activeTimer);
-        isLooking = false;
+        isLookingRoutine = false;
         ChooseNextRoutine();
         yield return null;
     }
@@ -82,7 +82,11 @@ public class LookingCrowd : MonoBehaviour
     }
     private void NoLookAnim()
     {
-        anim = crowdSprites[currentIndex].gameObject.GetComponent<Animator>();
-        anim.SetBool("IsLook", false);
+        for (int i = 0; i < crowdSprites.Length; i++)
+        {
+            anim = crowdSprites[i].gameObject.GetComponent<Animator>();
+            anim.SetBool("IsLook", false);
+        }
+
     }
 }

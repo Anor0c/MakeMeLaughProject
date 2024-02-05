@@ -715,19 +715,19 @@ PrefabInstance:
       objectReference: {fileID: 2096452047}
     - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
       propertyPath: maxCalmTimer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
-      propertyPath: minCalmTimer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
-      propertyPath: maxLookingTimer
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
-      propertyPath: minLookingTimer
+      propertyPath: minCalmTimer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: maxLookingTimer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159853023782610918, guid: 962243cbbdb0659449e766220f10115e, type: 3}
+      propertyPath: minLookingTimer
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8780561707258357029, guid: 962243cbbdb0659449e766220f10115e, type: 3}
       propertyPath: m_LocalPosition.x
